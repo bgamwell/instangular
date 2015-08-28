@@ -15,11 +15,10 @@
   <div class="row">
     <hr>
     <br>
-    <a href="/favorites"><button class="btn btn-default">View Favorites</button></a>
-    <br>
+    <a href="/favorites"><button class="btn btn-default" id="favorites">View Favorites</button></a>
     <br>
     <div class="row" ng-show="photos.length > 0">
-      <div class="col-md-3 col-sm-4" ng-repeat="photo in photos">
+      <div class="col-md-3 col-sm-12 col-xs-12" ng-repeat="photo in photos">
         <div class="thumbnail">
           <img ng-src="{{photo.images.standard_resolution.url}}">
           <br>
