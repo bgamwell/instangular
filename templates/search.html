@@ -1,26 +1,38 @@
-<h3>search #tags</h3>
-<form ng-submit="searchTag()" class="form-inline">
-  <div class="form-group">
-    <input type="text" ng-model="tag" class="form-control" placeholder="type any tag name">
+<div class="jumbotron">
+  <div class="container">
+    <h1>Instangular</h1>
+    <p>Type in any search term or tag for a feed of Instagram's latest uploads.</p>
+    <form ng-submit="searchTag()" class="form-inline">
+      <div class="form-group">
+        <input id="input-field" type="text" ng-model="tag" class="form-control" placeholder="Type your fave Instagram tag" autofocus required>
+      </div>
+      <input type="submit" value="Search" class="btn btn-default">
+    </form>
   </div>
-  <input type="submit" value="Search" class="btn btn-primary">
-</form>
-<hr>
-<p><a href="/favorites">view favorites</a></p>
-<br>
-<div class="row" ng-show="photos.length > 0">
-  <div class="col-md-3 col-sm-4" ng-repeat="photo in photos">
-    <div class="thumbnail">
-      <img ng-src="{{photo.images.standard_resolution.url}}">
-      <br>
-      <p>
-        @{{photo.user.username}}
-        <span class="pull-right">
-          <span class="glyphicon glyphicon-heart"></span>
-          <ng-pluralize count="{{photo.likes.count}}" when="{'one': '1 like', 'other': '{} likes'}"></ng-pluralize>
-        </span>
-      </p>
-      <p><a href="javascript:void(0)" ng-click="savePhoto(photo)">Save</a></p>
+</div>
+
+<div class="container">
+  <div class="row">
+    <hr>
+    <br>
+    <a href="/favorites"><button class="btn btn-default">View Favorites</button></a>
+    <br>
+    <br>
+    <div class="row" ng-show="photos.length > 0">
+      <div class="col-md-3 col-sm-4" ng-repeat="photo in photos">
+        <div class="thumbnail">
+          <img ng-src="{{photo.images.standard_resolution.url}}">
+          <br>
+          <p>
+            @{{photo.user.username}}
+            <span class="pull-right">
+              <span class="glyphicon glyphicon-heart"></span>
+              <ng-pluralize count="{{photo.likes.count}}" when="{'one': '1 like', 'other': '{} likes'}"></ng-pluralize>
+            </span>
+          </p>
+          <p><a href="javascript:void(0)"><button class="btn btn-default" ng-click="savePhoto(photo)">Save</button></a></p>
+        </div>
+      </div>
     </div>
   </div>
 </div>

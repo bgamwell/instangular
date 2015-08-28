@@ -1,0 +1,12 @@
+h1 {
+  font-family: 'Damion', cursive;
+}
+
+#input-field {
+  width: 500px;
+}
+
+.jumbotron {
+  background-color: transparent;
+  text-align: center;
+}

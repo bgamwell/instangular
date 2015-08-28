@@ -1,19 +1,30 @@
-<h3>favorite photos</h3>
-<hr>
-<p><a href="/">back home</a></p>
-<br>
-<div class="row" ng-show="favorites.length > 0">
-  <div class="col-md-3 col-sm-4" ng-repeat="photo in favorites">
-    <div class="thumbnail">
-      <img ng-src="{{photo.images.standard_resolution.url}}">
-      <br>
-      <p>
-        @{{photo.user.username}}
-        <span class="pull-right">
-          <span class="glyphicon glyphicon-heart"></span>
-          <ng-pluralize count="{{photo.likes.count}}" when="{'one': '1 like', 'other': '{} likes'}"></ng-pluralize>
-        </span>
-      </p>
+<div class="jumbotron">
+  <div class="container">
+    <h1>Favorite Photos</h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <hr>
+    <br>
+    <a href="/"><button class="btn btn-default">Back Home</button></a>
+    <br>
+    <br>
+    <div class="row" ng-show="favorites.length > 0">
+      <div class="col-md-3 col-sm-4" ng-repeat="photo in favorites">
+        <div class="thumbnail">
+          <img ng-src="{{photo.images.standard_resolution.url}}">
+          <br>
+          <p>
+            @{{photo.user.username}}
+            <span class="pull-right">
+              <span class="glyphicon glyphicon-heart"></span>
+              <ng-pluralize count="{{photo.likes.count}}" when="{'one': '1 like', 'other': '{} likes'}"></ng-pluralize>
+            </span>
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </div>

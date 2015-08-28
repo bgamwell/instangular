@@ -4,10 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <title>Instangular | A Faster Way to Find Your Favorite Instagrams</title>
+
   <!-- bootstrap css -->
   <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
-  <title>Instangular</title>
+  <!-- Custom CSS -->
+  <link type="text/css" rel="stylesheet" href="styles.css">
+
+  <!-- Custom font -->
+  <link href='https://fonts.googleapis.com/css?family=Damion' rel='stylesheet' type='text/css'>
 
   <!-- angular -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
@@ -19,10 +25,8 @@
   <script type="text/javascript" src="app.js"></script>
 </head>
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12" ng-view></div>
-    </div>
-  </div>
+
+  <ng-view></ng-view>
+
 </body>
 </html>

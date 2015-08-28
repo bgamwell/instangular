@@ -3,10 +3,9 @@ angular.module('instangular', ['ngRoute'])
   .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'templates/search.html',
-        controller: 'MainCtrl'
-      })
-
+          templateUrl: 'templates/search.html',
+          controller: 'MainCtrl'
+        })
       .when('/favorites', {
         templateUrl: 'templates/favorites.html',
         controller: 'FavoritesCtrl'
@@ -37,6 +36,7 @@ angular.module('instangular', ['ngRoute'])
       if (!localStorage.photos) {
         localStorage.photos = JSON.stringify([]);
       }
+      console.log(photo);
 
       // get existing favorites from localStorage.photos
       var allPhotos = JSON.parse(localStorage.photos);
